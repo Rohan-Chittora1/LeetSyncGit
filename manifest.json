@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "LeetSyncGit",
+  "version": "0.0.1",
+  "description": "Sync LeetCode solutions to GitHub securely",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+
+
+}

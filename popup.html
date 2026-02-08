@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>LeetSyncGit</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 12px;
+      text-align: center;
+    }
+
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-weight: 600;
+    }
+
+    #syncBtn {
+      background-color: #2ea44f;
+      /* GitHub green */
+      color: white;
+    }
+
+    #syncBtn:disabled {
+      background-color: #9be2b0;
+      /* lighter green */
+      color: #ffffff;
+      opacity: 1;
+      /* 👈 IMPORTANT */
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #555;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .box {
+      background: #f6f8fa;
+      border-radius: 6px;
+      padding: 10px;
+      margin-top: 10px;
+      text-align: left;
+      /* 👈 keeps steps readable */
+    }
+
+
+    .danger {
+      color: #b00020;
+    }
+
+    select {
+      width: 100%;
+      margin-top: 6px;
+      padding: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>LeetSyncGit</h3>
+
+  <!-- STATUS -->
+  <div id="status">Checking GitHub connection…</div>
+
+  <!-- SETUP STEPS -->
+ <div id="setupBox" class="box small">
+  <b>One-time setup:</b><br><br>
+
+  <b>1.</b> Create a GitHub repository<br>
+  (any name you like)<br><br>
+
+  <b>2.</b> Create a Fine-Grained PAT with:<br>
+  • Repository access: <b>Only selected repo</b><br>
+  • Permissions: <b>Contents → Read & Write</b><br><br>
+
+  <b>3.</b> Click <b>Connect GitHub</b> and paste the token<br>
+  <b>4.</b> Select the repository once
+</div>
+
+
+  <!-- REPO SELECT -->
+  <div id="repoSelectBox" style="display:none; margin-top:10px;">
+    <label for="repoSelect"><b>Select repository</b></label>
+    <select id="repoSelect"></select>
+    <button id="confirmRepoBtn">Confirm Repository</button>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <button id="syncBtn" disabled>Sync</button>
+  <button id="connectBtn" style="display:none;">Connect GitHub</button>
+<button id="revokeBtn" style="display:none; background:#ffe5e5; color:#b00020;">
+  Revoke GitHub Access
+</button>
+
+
+  <!-- SECURITY NOTE -->
+  <div class="small box">
+    🔐 <b>Security & Privacy</b><br>
+    • No backend or server<br>
+    • Token stored only on your device<br>
+    • Access limited to selected repository
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
