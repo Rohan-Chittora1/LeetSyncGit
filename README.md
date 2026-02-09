@@ -80,9 +80,21 @@ This approach follows the **principle of least privilege**.
 
 ## 5. Installation (Manual via GitHub)
 
-1. Clone this repository:
+1. Download the project from GitHub
+
+Option A: Download ZIP
+
+- Go to your GitHub repository
+
+- Click Code → Download ZIP
+
+- Extract the ZIP to a folder on your system
+
+Option B :
+- Clone this repository:
    ```bash
    git clone https://github.com/<your-username>/LeetSyncGit.git
+   ```
 
 2. Open Chrome and go to:
 
