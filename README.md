@@ -170,24 +170,7 @@ No further setup is required.
 
 ---
 
-## 8. How Syncing Works (High-Level)
-
-1. You submit a solution on LeetCode
-2. The extension detects an **Accepted** submission
-3. The submission code is extracted from the submissions panel
-4. Language and problem slug are determined
-5. File name is generated:
-
-   ```
-   problem-slug.extension
-   ```
-6. The file is pushed to the root of the selected GitHub repository using the GitHub REST API
-
-No background server is involved at any point.
-
----
-
-## 9. Common Mistakes and How to Avoid Them
+## 8. Common Mistakes and How to Avoid Them
 
 * **Token has no repo access**
 
@@ -211,7 +194,7 @@ No background server is involved at any point.
 
 ---
 
-## 10. Security Limitations and Trade-offs
+## 9. Security Limitations and Trade-offs
 
 * The token is stored locally in `chrome.storage.local`
 * Anyone with access to your browser profile could theoretically extract it
@@ -222,7 +205,7 @@ This is a conscious trade-off in favor of transparency and user control.
 
 ---
 
-## 11. Future Improvements
+## 10. Future Improvements
 
 * Optional preview before sync
 * Automatic sync toggle
@@ -240,6 +223,7 @@ Contributions are welcome.
 Before submitting a PR:
 
 * Follow the existing project structure
+* If you want to contribute to this project, please fork the repository and submit a pull request with clear details of   your changes.
 * Do not introduce backend services
 * Do not add broad GitHub permissions
 * Keep security implications explicit
